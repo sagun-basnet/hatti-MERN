@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 200vh;
+}
+nav {
+  height: 5rem;
+  width: 100%;
+  background-color: aqua;
+  position: fixed;
+  top: 0rem;
+}
+.container {
+  height: 90vh;
+  border: 4px solid black;
+  position: relative;
+}
+.child {
+  height: 20rem;
+  width: 20rem;
+  border: 2px solid black;
+  background-color: aquamarine;
+  position: absolute;
+  right: calc(50% - 10rem);
+  bottom: calc(50% - 10rem);
+}

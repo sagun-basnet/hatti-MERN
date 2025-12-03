@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* .container {
+  border: 2px solid black;
+  width: 10rem;
+  height: 20rem;
+  display: inline;
+}
+span {
+  display: block;
+} */
+
+.container {
+  /* height: 90vh; */
+  border: 4px solid black;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* overflow-y: scroll; */
+  /* justify-content: ; */
+  /* align-items: center; */
+}
+.item {
+  height: 10rem;
+  width: 10rem;
+  background-color: aquamarine;
+  border: 2px solid black;
+}
+.item1{
+    display: flex;
+}
