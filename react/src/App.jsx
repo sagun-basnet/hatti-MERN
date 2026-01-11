@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/LoginPage";
 import HomeLayout from "./Layouts/HomeLayout";
+import APIPage from "./pages/APIPage";
+import SinglePage from "./pages/SinglePage";
 
 const App = () => {
   // const AdminLayout = () => {
@@ -49,6 +51,14 @@ const App = () => {
     {
       path: "/login",
       element: <LoginPage />,
+    },
+    {
+      path: "/api",
+      element: <APIPage />,
+    },
+    {
+      path: "/products/:id",
+      element: <SinglePage />,
     },
     {
       path: "*",
