@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import HomeLayout from "./Layouts/HomeLayout";
 import APIPage from "./pages/APIPage";
 import SinglePage from "./pages/SinglePage";
+import AddProduct from "./components/AddProduct";
 
 const App = () => {
   // const AdminLayout = () => {
@@ -51,6 +52,10 @@ const App = () => {
     {
       path: "/login",
       element: <LoginPage />,
+    },
+    {
+      path: "/add-product",
+      element: <AddProduct />,
     },
     {
       path: "/api",
