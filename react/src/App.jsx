@@ -12,6 +12,7 @@ import HomeLayout from "./Layouts/HomeLayout";
 import APIPage from "./pages/APIPage";
 import SinglePage from "./pages/SinglePage";
 import AddProduct from "./components/AddProduct";
+import Table from "./components/Table";
 
 const App = () => {
   // const AdminLayout = () => {
@@ -52,6 +53,10 @@ const App = () => {
     {
       path: "/login",
       element: <LoginPage />,
+    },
+    {
+      path: "/table",
+      element: <Table />,
     },
     {
       path: "/add-product",
