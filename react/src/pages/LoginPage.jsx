@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../context/authContext";
 
 const LoginPage = () => {
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const init = {
-    email: "",
+    username: "",
     password: "",
   };
   const [formData, setFormData] = useState(init);
@@ -13,20 +17,25 @@ const LoginPage = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.email === "") {
       return alert("Email must be filled");
     }
 
-    if (formData.password.length < 7) {
+    if (formData.password.length < 5) {
       return alert("password should contain min 8 char");
     }
-
-    console.log(formData);
-    setFormData(init);
-    navigate("/");
+    try {
+      const res = await login(formData);
+      console.log(res);
+      navigate("/");
+      console.log(formData);
+      setFormData(init);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -38,11 +47,11 @@ const LoginPage = () => {
         <h1 className="text-4xl text-center font-bold">Login</h1>
         <input
           className="p-2 w-full border-2 rounded-md"
-          type="email"
-          placeholder="Enter email"
-          name="email"
+          type="text"
+          placeholder="Enter username"
+          name="username"
           onChange={handleChange}
-          value={formData.email}
+          value={formData.username}
           required
         />
         <input
