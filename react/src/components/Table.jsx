@@ -7,9 +7,15 @@ import { toast } from "react-toastify";
 const Table = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const token = localStorage.getItem("userToken");
+  console.log(token);
 
   const fetchData = async () => {
-    const fetchValue = await axios.get("https://fakestoreapi.com/products");
+    const fetchValue = await axios.get("https://fakestoreapi.com/products", {
+      headers: {
+        Authorization: token,
+      },
+    });
     // console.log(fetchValue.data);
     setData(fetchValue.data);
   };

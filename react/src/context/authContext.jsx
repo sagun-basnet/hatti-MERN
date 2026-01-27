@@ -9,6 +9,7 @@ const AuthContextProvider = ({ children }) => {
     username: "jhone",
     password: "12345678",
   };
+  
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("userData")) || null,
   );
